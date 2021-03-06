@@ -3,214 +3,241 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Subs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sub Selector</title>
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" size="16x16">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="accordion accordion-flush" id="ingredients">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-bread"><button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapse-bread" aria-extended="false"
-                    aria-controls="collapse-bread" aria-expanded="false">bread</button></h2>
-            <div class="accordion-collapse collapse" id="collapse-bread" aria-labelledby="heading-bread"
-                data-bs-parent="#ingredients" style="">
-                <div class="accordion-body p-0">
-                    <div class="list-group list-group-flush"><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">garlic sub</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">grilled rye</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">grilled&nbsp;garlic
-                            sub</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="" data-com.bitwarden.browser.user-edited="yes">kimmel weck
-                            roll</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="" data-com.bitwarden.browser.user-edited="yes">rye</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">toasted garlic sub</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">toasted sub</label></div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#filter-modal">Filter</button>
+        </div>
+    </nav>
+    <ul class="list-group list-group-flush" id="subs">
+
+    </ul>
+
+    <div class="modal" tabindex="-1" id="filter-modal">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Filter</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="accordion accordion-flush" id="ingredients">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-bread"><button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse-bread" aria-extended="false"
+                                aria-controls="collapse-bread" aria-expanded="false">bread</button></h2>
+                        <div class="accordion-collapse collapse" id="collapse-bread" aria-labelledby="heading-bread"
+                            data-bs-parent="#ingredients" style="">
+                            <div class="accordion-body p-0">
+                                <div class="list-group list-group-flush"><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">garlic sub</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">grilled rye</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">grilled&nbsp;garlic
+                                        sub</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="" data-com.bitwarden.browser.user-edited="yes">kimmel weck
+                                        roll</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="" data-com.bitwarden.browser.user-edited="yes">rye</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">toasted garlic sub</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">toasted sub</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-meat"><button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse-meat" aria-extended="false"
+                                aria-controls="collapse-meat" aria-expanded="false">meat</button></h2>
+                        <div class="accordion-collapse collapse" id="collapse-meat" aria-labelledby="heading-meat"
+                            data-bs-parent="#ingredients" style="">
+                            <div class="accordion-body p-0">
+                                <div class="list-group list-group-flush"><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">bacon</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">breaded chicken cutlet</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">burger</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">capicola</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">chicken fingers</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">chicken salad</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">chopped steak</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">corned
+                                        beef</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">fried bologna</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">grilled chicken</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">ham</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">italian sausage patty</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">meatballs</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">pastrami</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">pepperoni</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">roast beef</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">roasted pork loin</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">salami</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">sausage patty</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">tuna</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">turkey</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-cheese"><button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse-cheese" aria-extended="false"
+                                aria-controls="collapse-cheese" aria-expanded="false">cheese</button></h2>
+                        <div class="accordion-collapse collapse" id="collapse-cheese" aria-labelledby="heading-cheese"
+                            data-bs-parent="#ingredients" style="">
+                            <div class="accordion-body p-0">
+                                <div class="list-group list-group-flush"><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">american</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">cheddar</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">mozzarella</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">muenster</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">pepper jack</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">provolone</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">smoked gouda</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">swiss</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-vegetables"><button class="accordion-button collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-vegetables" aria-extended="false"
+                                aria-controls="collapse-vegetables" aria-expanded="false">vegetables</button></h2>
+                        <div class="accordion-collapse collapse" id="collapse-vegetables" aria-labelledby="heading-vegetables"
+                            data-bs-parent="#ingredients" style="">
+                            <div class="accordion-body p-0">
+                                <div class="list-group list-group-flush"><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">coleslaw</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">cucumber</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">eggplant</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">hot
+                                        peppers</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">jalapenos</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">lettuce</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">mesculin mix</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">mushrooms</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">onion</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">peppers</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">pickles</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">portobello
+                                        mushrooms</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">red grapes</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">red onion</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">roasted red peppers</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">roasted vegetables</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">sauerkraut</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">sauteed hot peppers</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">sauteed onions</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">sweet chili
+                                        coleslaw</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">spinach</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">tomato</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-condiments"><button class="accordion-button collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-condiments" aria-extended="false"
+                                aria-controls="collapse-condiments" aria-expanded="false">condiments</button></h2>
+                        <div class="accordion-collapse collapse" id="collapse-condiments" aria-labelledby="heading-condiments"
+                            data-bs-parent="#ingredients" style="">
+                            <div class="accordion-body p-0">
+                                <div class="list-group list-group-flush"><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">au jus</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">balsamic dressing</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">basil mayo</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">bbq
+                                        sauce</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">bleu cheese</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">cajun ranch</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">cheese
+                                        sauce</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">guacamole</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">honey mustard</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">honey
+                                        stinging garlic sauce</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">horsey&nbsp;mayo</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">hot
+                                        sauce</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">hummus</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">italian dressing</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">jalapeno mayo</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">ketchup</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox"
+                                            value="">marinara sauce</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">mayo</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">medium
+                                        sauce</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">mustard</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">oil</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">olive
+                                        spread</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">pesto mayo</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">roasted red pepper
+                                        mayo</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">russian dressing</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">sriracha mayo</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">sweet
+                                        chili sauce</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-misc"><button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse-misc" aria-extended="false"
+                                aria-controls="collapse-misc" aria-expanded="false">misc</button></h2>
+                        <div class="accordion-collapse collapse" id="collapse-misc" aria-labelledby="heading-misc"
+                            data-bs-parent="#ingredients" style="">
+                            <div class="accordion-body p-0">
+                                <div class="list-group list-group-flush"><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">cool ranch doritos</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">french
+                                        fries</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">mesquite bbq chips</label><label class="list-group-item"><input
+                                            class="form-check-input me-1" type="checkbox" value="">mozzarella sticks</label><label
+                                        class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">nacho
+                                        cheese doritos</label><label class="list-group-item"><input class="form-check-input me-1"
+                                            type="checkbox" value="">toasted almonds</label></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-meat"><button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapse-meat" aria-extended="false"
-                    aria-controls="collapse-meat" aria-expanded="false">meat</button></h2>
-            <div class="accordion-collapse collapse" id="collapse-meat" aria-labelledby="heading-meat"
-                data-bs-parent="#ingredients" style="">
-                <div class="accordion-body p-0">
-                    <div class="list-group list-group-flush"><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">bacon</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">breaded chicken cutlet</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">burger</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">capicola</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">chicken fingers</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">chicken salad</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">chopped steak</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">corned
-                            beef</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">fried bologna</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">grilled chicken</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">ham</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">italian sausage patty</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">meatballs</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">pastrami</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">pepperoni</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">roast beef</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">roasted pork loin</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">salami</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">sausage patty</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">tuna</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">turkey</label></div>
-                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
+          </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-cheese"><button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapse-cheese" aria-extended="false"
-                    aria-controls="collapse-cheese" aria-expanded="false">cheese</button></h2>
-            <div class="accordion-collapse collapse" id="collapse-cheese" aria-labelledby="heading-cheese"
-                data-bs-parent="#ingredients" style="">
-                <div class="accordion-body p-0">
-                    <div class="list-group list-group-flush"><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">american</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">cheddar</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">mozzarella</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">muenster</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">pepper jack</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">provolone</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">smoked gouda</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">swiss</label></div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-vegetables"><button class="accordion-button collapsed"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse-vegetables" aria-extended="false"
-                    aria-controls="collapse-vegetables" aria-expanded="false">vegetables</button></h2>
-            <div class="accordion-collapse collapse" id="collapse-vegetables" aria-labelledby="heading-vegetables"
-                data-bs-parent="#ingredients" style="">
-                <div class="accordion-body p-0">
-                    <div class="list-group list-group-flush"><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">coleslaw</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">cucumber</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">eggplant</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">hot
-                            peppers</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">jalapenos</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">lettuce</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">mesculin mix</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">mushrooms</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">onion</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">peppers</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">pickles</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">portobello
-                            mushrooms</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">red grapes</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">red onion</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">roasted red peppers</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">roasted vegetables</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">sauerkraut</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">sauteed hot peppers</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">sauteed onions</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">sweet chili
-                            coleslaw</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">spinach</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">tomato</label></div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-condiments"><button class="accordion-button collapsed"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse-condiments" aria-extended="false"
-                    aria-controls="collapse-condiments" aria-expanded="false">condiments</button></h2>
-            <div class="accordion-collapse collapse" id="collapse-condiments" aria-labelledby="heading-condiments"
-                data-bs-parent="#ingredients" style="">
-                <div class="accordion-body p-0">
-                    <div class="list-group list-group-flush"><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">au jus</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">balsamic dressing</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">basil mayo</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">bbq
-                            sauce</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">bleu cheese</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">cajun ranch</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">cheese
-                            sauce</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">guacamole</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">honey mustard</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">honey
-                            stinging garlic sauce</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">horsey&nbsp;mayo</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">hot
-                            sauce</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">hummus</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">italian dressing</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">jalapeno mayo</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">ketchup</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
-                                value="">marinara sauce</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">mayo</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">medium
-                            sauce</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">mustard</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">oil</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">olive
-                            spread</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">pesto mayo</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">roasted red pepper
-                            mayo</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">russian dressing</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">sriracha mayo</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">sweet
-                            chili sauce</label></div>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-misc"><button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapse-misc" aria-extended="false"
-                    aria-controls="collapse-misc" aria-expanded="false">misc</button></h2>
-            <div class="accordion-collapse collapse" id="collapse-misc" aria-labelledby="heading-misc"
-                data-bs-parent="#ingredients" style="">
-                <div class="accordion-body p-0">
-                    <div class="list-group list-group-flush"><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">cool ranch doritos</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">french
-                            fries</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">mesquite bbq chips</label><label class="list-group-item"><input
-                                class="form-check-input me-1" type="checkbox" value="">mozzarella sticks</label><label
-                            class="list-group-item"><input class="form-check-input me-1" type="checkbox" value="">nacho
-                            cheese doritos</label><label class="list-group-item"><input class="form-check-input me-1"
-                                type="checkbox" value="">toasted almonds</label></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--<script src="js/main.js" async defer></script>-->
+      </div>
+    
+    <script src="js/main.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
         integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
         crossorigin="anonymous"></script>

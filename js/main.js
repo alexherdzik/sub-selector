@@ -1120,7 +1120,17 @@ const categories = [
 }
 ];
 
-categories.forEach(category => {
+const subUL = document.getElementById('subs');
+
+subs.forEach(sub => {
+  const li = document.createElement('li');
+  li.classList.add('list-group-item');
+  li.textContent = `#${sub.number} ${sub.name}`;
+
+  subUL.appendChild(li);
+});
+
+/*categories.forEach(category => {
   const accItem = document.createElement('div');
   accItem.classList.add('accordion-item');
 
@@ -1182,4 +1192,4 @@ categories.forEach(category => {
   accItem.appendChild(accHeader);
   accItem.appendChild(accCol);
   document.getElementById('ingredients').appendChild(accItem);
-});
+});*/
