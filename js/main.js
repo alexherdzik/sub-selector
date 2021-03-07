@@ -1162,7 +1162,7 @@ function filterSubs() {
   displaySubs(filteredSubs);
 }
 
-/*categories.forEach(category => {
+/* categories.forEach(category => {
   const accItem = document.createElement('div');
   accItem.classList.add('accordion-item');
 
@@ -1177,7 +1177,7 @@ function filterSubs() {
   accBtn.setAttribute('data-bs-target', `#collapse-${category.name}`);
   accBtn.setAttribute('aria-extended', 'false');
   accBtn.setAttribute('aria-controls', `collapse-${category.name}`);
-  accBtn.textContent = category.name;
+  accBtn.textContent = toTitleCase(category.name);
 
   const accCol = document.createElement('div');
   accCol.classList.add('accordion-collapse', 'collapse');
@@ -1201,7 +1201,7 @@ function filterSubs() {
     input.setAttribute('type', 'checkbox');
     input.setAttribute('value', option);
 
-    const textNode = document.createTextNode(option);
+    const textNode = document.createTextNode(toTitleCase(option));
 
     label.appendChild(input);
     label.appendChild(textNode);
@@ -1215,4 +1215,4 @@ function filterSubs() {
   accItem.appendChild(accHeader);
   accItem.appendChild(accCol);
   document.getElementById('ingredients').appendChild(accItem);
-});*/
+}); */
