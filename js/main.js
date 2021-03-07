@@ -1120,15 +1120,47 @@ const categories = [
 }
 ];
 
-const subUL = document.getElementById('subs');
+document.getElementById('filter-btn').addEventListener('click', filterSubs);
 
-subs.forEach(sub => {
-  const li = document.createElement('li');
-  li.classList.add('list-group-item');
-  li.textContent = `#${sub.number} ${sub.name}`;
+displaySubs(subs);
 
-  subUL.appendChild(li);
-});
+
+function displaySubs(subs) {
+  const displayContainer = document.getElementById('subs');
+
+  clearSubs();
+
+  subs.forEach(sub => {
+    const li = document.createElement('li');
+    li.classList.add('list-group-item');
+    li.textContent = `#${sub.number} ${sub.name}`;
+
+    displayContainer.appendChild(li);
+  });
+}
+
+function clearSubs() {
+  const displayContainer = document.getElementById('subs');
+
+  while (displayContainer.firstChild) {
+    displayContainer.removeChild(displayContainer.lastChild);
+  }
+}
+
+function filterSubs() {
+  const withIngredients = Array.from(document.querySelectorAll('#ingredients :checked')).map(node => node.value);
+  //console.log(withIngredients);
+
+  const filteredSubs = subs.filter(sub => {
+    for (let i = 0; i < withIngredients.length; i++) {
+      if (sub.ingredients.includes(withIngredients[i])) return true;
+    }
+
+    return false;
+  });
+
+  displaySubs(filteredSubs);
+}
 
 /*categories.forEach(category => {
   const accItem = document.createElement('div');
@@ -1160,23 +1192,14 @@ subs.forEach(sub => {
   listGroup.classList.add('list-group', 'list-group-flush');
 
   category.options.forEach(option => {
-    //const formCheck = document.createElement('div');
-    //formCheck.classList.add('form-check');
 
     const label = document.createElement('label');
     label.classList.add('list-group-item');
-    //label.setAttribute('for', i);
 
     const input = document.createElement('input');
     input.classList.add('form-check-input', 'me-1');
     input.setAttribute('type', 'checkbox');
-    input.setAttribute('value', '');
-    //input.setAttribute('id', i);
-
-    //formCheck.appendChild(input);
-    //formCheck.appendChild(label);
-    //accBody.appendChild(formCheck);
-    //i++;
+    input.setAttribute('value', option);
 
     const textNode = document.createTextNode(option);
 
