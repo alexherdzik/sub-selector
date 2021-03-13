@@ -13,7 +13,8 @@ const subs = [
     "price": {
       "half": 5.75,
       "whole": 10.75
-    }
+    },
+    "description": "Chicken Salad, Red Grapes, Toasted Almonds, Lettuce, Tomato on a toasted Sub"
   },
   {
     "number": 2,
@@ -34,7 +35,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Provolone, Cheddar, Swiss, Pepper Jack, Red Onion, Lettuce, Tomato, Roasted Red Peppers, Cucumber, Basil Mayo on a toasted Sub"
   },
   {
     "number": 3,
@@ -50,7 +52,8 @@ const subs = [
     "price": {
       "half": 5.75,
       "whole": 10.75
-    }
+    },
+    "description": "Roasted Vegetables, melted Provolone, Lettuce, Tomato, Pesto Mayo on a toasted Sub"
   },
   {
     "number": 4,
@@ -67,7 +70,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, BLT, Provolone, Basil Mayo on a toasted Sub"
   },
   {
     "number": 5,
@@ -84,7 +88,8 @@ const subs = [
     "price": {
       "half": 6.25,
       "whole": 11.75
-    }
+    },
+    "description": "Turkey, Cucumber, Muenster Cheese, Lettuce, Tomato, Basil Mayo on a toasted Sub"
   },
   {
     "number": 6,
@@ -104,7 +109,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Ham, Cappy, Salami, Lettuce, Tomato, Red Onion, Roasted Red Peppers, Provolone, Olive Spread on a toasted Sub"
   },
   {
     "number": 7,
@@ -124,7 +130,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Cappy, Salami, Pepperoni, Provolone, Lettuce, Tomato, Hot Peppers, Mayo, Oil on a toasted Sub"
   },
   {
     "number": 8,
@@ -143,7 +150,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, Ham, Roast Beef, American Cheese, Lettuce, Tomato, Red Onion, Mayo on a toasted Sub"
   },
   {
     "number": 9,
@@ -161,7 +169,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Turkey, Corned Beef, Pastrami, Swiss, Lettuce, Tomato, Russian Dressing on a toasted Sub"
   },
   {
     "number": 10,
@@ -173,12 +182,13 @@ const subs = [
       "tomato",
       "mozzarella",
       "mayo",
-      "toasted garlic sub"
+      "garlic sub"
     ],
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Breaded Chicken Cutlet, BLT, melted Mozzarella, Mayo on toasted Garlic Sub"
   },
   {
     "number": 11,
@@ -195,7 +205,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Roast Beef, Melted Provolone, Lettuce, Tomato, Red Onion, Italian Dressing on a toasted Sub"
   },
   {
     "number": 12,
@@ -213,7 +224,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Chopped Steak, Melted Provolone, Mushrooms, Sauteed Onions, Lettuce, Tomato, Hot Sauce on a toasted Sub"
   },
   {
     "number": 13,
@@ -227,7 +239,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Chopped Steak, Sauteed Onions, Cheese Sauce on a toasted Sub"
   },
   {
     "number": 14,
@@ -235,13 +248,14 @@ const subs = [
     "ingredients": [
       "roast beef",
       "mozzarella",
-      "toasted garlic sub",
+      "garlic sub",
       "au jus"
     ],
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Roast Beef, Melted Mozzarella on toasted Garlic Sub w/side of Au Jus"
   },
   {
     "number": 15,
@@ -252,12 +266,13 @@ const subs = [
       "swiss",
       "pickles",
       "honey mustard",
-      "grilled garlic sub"
+      "garlic sub"
     ],
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Roasted Pork Loin, Ham, Swiss, Pickles, Honey Mustard on grilled Garlic Sub"
   },
   {
     "number": 16,
@@ -274,7 +289,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Grilled Chicken, Portobello Mushrooms, Lettuce, Tomato, melted Mozzarella, Pesto Mayo on toasted Sub"
   },
   {
     "number": 17,
@@ -289,7 +305,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Ham, melted Mozzarella, Bacon, BBQ Sauce on a toasted Sub"
   },
   {
     "number": 18,
@@ -306,7 +323,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, Melted American Cheese, BLT, Russian Dressing on a toasted Sub"
   },
   {
     "number": 19,
@@ -321,7 +339,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.25
-    }
+    },
+    "description": "Chicken Fingers,Lettuce, Tomato, Bleu Cheese on a toasted Sub"
   },
   {
     "number": 20,
@@ -336,7 +355,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.5
-    }
+    },
+    "description": "Corned Beef, Swiss, Sauerkraut, Russian Dressing on Grilled Rye."
   },
   {
     "number": 21,
@@ -351,7 +371,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.5
-    }
+    },
+    "description": "Pastrami, Swiss, Coleslaw, Russian Dressing on grilled Rye"
   },
   {
     "number": 22,
@@ -366,7 +387,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Turkey, Swiss, Sauerkraut, Russian Dressing on grilled Rye"
   },
   {
     "number": 23,
@@ -380,7 +402,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Tuna, American Cheese, sautéed Onions on grilled Rye"
   },
   {
     "number": 24,
@@ -393,7 +416,8 @@ const subs = [
       "tomato",
       "grilled rye"
     ],
-    "price": 10
+    "price": 10,
+    "description": "1/2 lb. Burger, Swiss Cheese, Sauteed Onions, Lettuce, Tomato on grilled Rye"
   },
   {
     "number": 25,
@@ -404,7 +428,8 @@ const subs = [
       "horsey mayo",
       "kimmel weck roll"
     ],
-    "price": 10.5
+    "price": 10.5,
+    "description": "Roast Beef in Au Jus, Horsey Mayo on Kimmel Weck Roll"
   },
   {
     "number": 26,
@@ -421,7 +446,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Corned Beef, Pastrami, Swiss, Russian Dressing, Lettuce, Tomato on Rye"
   },
   {
     "number": 28,
@@ -435,7 +461,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Breaded Chicken Cutlet, melted Mozzarella Cheese, Marinara Sauce on a toasted Sub"
   },
   {
     "number": 29,
@@ -449,7 +476,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Meatballs, melted Mozzarella Cheese, Marinara Sauce on a toasted Sub"
   },
   {
     "number": 30,
@@ -466,7 +494,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Italian Sausage Pattie, Lettuce, Tomato, Sauteed Onions, Peppers, Mushrooms on a toasted Sub"
   },
   {
     "number": 31,
@@ -484,7 +513,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Sausage Pattie, Cappicola, Provolone Cheese, Lettuce, Tomato, Mayo, Oil on a toasted Sub"
   },
   {
     "number": 32,
@@ -502,7 +532,8 @@ const subs = [
     "price": {
       "half": 7,
       "whole": 12.75
-    }
+    },
+    "description": "Burger, American Cheese, Lettuce, Tomato, Onion, Pickles, Ketchup on a toasted Sub"
   },
   {
     "number": 33,
@@ -516,7 +547,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Sausage Pattie, Marinara Sauce, Melted Mozzarella Cheese on a toasted Sub"
   },
   {
     "number": 34,
@@ -530,7 +562,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Eggplant, melted Mozzarella Cheese, Marinara Sauce on a toasted Sub"
   },
   {
     "number": 35,
@@ -545,7 +578,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Roast Beef, Coleslaw, Swiss Cheese, Russian Dressing on a toasted Sub"
   },
   {
     "number": 36,
@@ -564,7 +598,8 @@ const subs = [
     "price": {
       "half": 7.5,
       "whole": 14
-    }
+    },
+    "description": "Chopped Steak, Melted Provolone, Chicken Fingers tossed in Medium Hot Sauce, Mushrooms, Sauteed Onions, Lettuce, Tomato on a toasted Sub"
   },
   {
     "number": 39,
@@ -579,7 +614,8 @@ const subs = [
     "price": {
       "half": 6,
       "whole": 11.25
-    }
+    },
+    "description": "Fried Bologna Melted American Cheese, Sauteed Onions, Mustard on a toasted Sub"
   },
   {
     "number": 41,
@@ -597,7 +633,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Chopped Steak, Melted Provolone, Seasoned French Fries*, Coleslaw, Tomato, Mayo, Oil on a toasted Sub\n*No, you cannot have them on the side. Thanks!"
   },
   {
     "number": 42,
@@ -614,7 +651,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Cappy, Pepperoni, Melted Mozzarella Cheese, Marinara Sauce, Hot Peppers, Mozzarella Sticks on a toasted Sub with Marinara dipping sauce"
   },
   {
     "number": 43,
@@ -632,7 +670,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Breaded Chicken Cutlet, Ham, Melted Swiss, Bleu Cheese, Lettuce, Tomato, Onion on a toasted Sub"
   },
   {
     "number": 44,
@@ -648,7 +687,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Pastrami, Melted Swiss on a Garlic Sub with Au Jus and Mustard or Russian Dressing"
   },
   {
     "number": 45,
@@ -667,7 +707,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Grilled Chicken, Mushrooms, Onions, Peppers, French Fries, Hot Sauce, Bleu Cheese, Provolone"
   },
   {
     "number": 46,
@@ -690,7 +731,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, Ham, Roast Beef, Salami, Cappy, Provolone, Lettuce, Tomato, Onion, Hot Peppers, Mayo, Oil on a toasted Sub"
   },
   {
     "number": 47,
@@ -708,7 +750,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Breaded Chicken Cutlet, Melted Pepper Jack Cheese, Lettuce, Tomato, Cucumber, Jalapeños, Sriracha Mayo on a toasted Sub"
   },
   {
     "number": 48,
@@ -726,7 +769,8 @@ const subs = [
     "price": {
       "half": 6.25,
       "whole": 11.75
-    }
+    },
+    "description": "Turkey, Spinach, Tomato, Onion, Roasted Red Peppers, Fresh Mozzarella, Mayo on a toasted Sub"
   },
   {
     "number": 49,
@@ -745,7 +789,8 @@ const subs = [
     "price": {
       "half": 6.25,
       "whole": 11.75
-    }
+    },
+    "description": "Turkey, Hummus, Fresh Mozzarella, Mesculin Mix, Tomato, Onion, Cucumber, Roasted Red Peppers on a toasted Sub"
   },
   {
     "number": 50,
@@ -763,7 +808,8 @@ const subs = [
     "price": {
       "half": 6.25,
       "whole": 11.75
-    }
+    },
+    "description": "Grilled Chicken, Melted Provolone, Mesculin Mix, Tomato, Onion, Cucumber, Sweet Chili Sauce on a toasted Sub"
   },
   {
     "number": 51,
@@ -781,7 +827,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Chopped Steak, Melted Pepper Jack, Seasoned French Fries (no you can’t have them on the side), Sweet Chili Coleslaw, Tomato, Sriracha Mayo, Oil on a toasted Sub"
   },
   {
     "number": 52,
@@ -798,7 +845,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Corned Beef, Melted Pepper Jack, Seasoned French Fries (no you can’t have them on the side), Sauteed Onions, Sauteed Hot Peppers, Mayo"
   },
   {
     "number": 53,
@@ -815,7 +863,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Grilled Chicken, Bacon, Melted Smoked Gouda, Roasted Red Pepper Mayo, Spinach, Tomato on a toasted Sub"
   },
   {
     "number": 54,
@@ -834,7 +883,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Breaded Chicken Cutlet, Bacon, Melted Cheddar, Mesquite BBQ Chips, BBQ Sauce, Lettuce, Tomato, Onion on a toasted Sub"
   },
   {
     "number": 55,
@@ -852,7 +902,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Grilled Chicken, Bacon, Melted Pepper Jack, Guacamole, Jalapeño Mayo, Mesculin Mix, Tomato on a toasted Sub"
   },
   {
     "number": 56,
@@ -871,7 +922,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, Bacon, Melted Pepper Jack, Guacamole, Roasted Red Pepper Mayo, Mesculin Mix, Tomato, Onion on a toasted sub roll"
   },
   {
     "number": 57,
@@ -886,7 +938,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Roast Beef, Bacon, Melted Cheddar, BBQ on a toasted sub"
   },
   {
     "number": 58,
@@ -904,7 +957,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, Bacon, Melted Smoked Gouda, Lettuce, Tomato, Onion, Russian Dressing on a toasted sub"
   },
   {
     "number": 59,
@@ -921,7 +975,8 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Grilled Chicken, Portobello Mushrooms, Melted Pepper Jack, Roasted Red Peppers, Mesculin Mix, Balsamic Dressing on a toasted sub roll"
   },
   {
     "number": 60,
@@ -937,7 +992,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Chicken Fingers tossed in Honey Stinging Garlic Sauce, Sweet Chili Coleslaw, Sriracha Mayo, Seasoned Fries (no you can’t have them on the side) on a toasted sub roll"
   },
   {
     "number": 61,
@@ -954,7 +1010,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.75
-    }
+    },
+    "description": "Chopped Steak, Nacho Cheese Doritos, Melted Pepper Jack, Cheddar Cheese Sauce, Hot Sauce, Jalapenos"
   },
   {
     "number": 62,
@@ -973,7 +1030,8 @@ const subs = [
     "price": {
       "half": 6.75,
       "whole": 12.5
-    }
+    },
+    "description": "Breaded Chicken, Bacon, Cool Ranch Doritos, Melted Pepper Jack, Cajun Ranch, Lettuce, Tomato, Red Onion"
   },
   {
     "number": 63,
@@ -992,9 +1050,10 @@ const subs = [
     "price": {
       "half": 6.5,
       "whole": 12
-    }
+    },
+    "description": "Turkey, Ham, Bacon, Melted Cheddar, Mayo, BBQ, Lettuce, Tomato"
   }
-];
+]
 
 const categories = [
   {
@@ -1002,10 +1061,8 @@ const categories = [
     "options": [
       "garlic sub",
       "grilled rye",
-      "grilled garlic sub",
       "kimmel weck roll",
       "rye",
-      "toasted garlic sub",
       "toasted sub"
     ]
   },
@@ -1123,7 +1180,6 @@ const categories = [
 document.getElementById('filter-btn').addEventListener('click', filterSubs);
 
 displaySubs(subs);
-
 
 function displaySubs(subs) {
   const displayContainer = document.getElementById('subs');
