@@ -1182,14 +1182,29 @@ document.getElementById('filter-btn').addEventListener('click', filterSubs);
 displaySubs(subs);
 
 function displaySubs(subs) {
+  const currencyFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
   const displayContainer = document.getElementById('subs');
-
+  
   clearSubs();
 
   subs.forEach(sub => {
     const li = document.createElement('li');
     li.classList.add('list-group-item');
-    li.textContent = `#${sub.number} ${sub.name}`;
+  
+    const heading = document.createElement('h5');
+    heading.textContent = `#${sub.number} ${sub.name}`;
+
+    const description = document.createElement('p');
+    description.classList.add('mb-2');
+    description.textContent = sub.description;
+
+    const price = document.createElement('small');
+    price.classList.add('text-muted');
+    price.textContent = (typeof sub.price === 'object') ? `${currencyFormatter.format(sub.price.half)} / ${currencyFormatter.format(sub.price.whole)}` : currencyFormatter.format(sub.price);
+
+    li.appendChild(heading);
+    li.appendChild(description);
+    li.appendChild(price);
 
     displayContainer.appendChild(li);
   });
