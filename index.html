@@ -10,17 +10,25 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
-<body style="padding-bottom: 54px;">
-    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+<body>
+    <!--<nav class="navbar fixed-bottom navbar-dark bg-dark">
         <div class="container-fluid">
             <button class="btn btn-primary" type="button" data-bs-toggle="modal"
                 data-bs-target="#filter-modal">Filter</button>
         </div>
-    </nav>
+    </nav>-->
 
-    <ul class="list-group list-group-flush" id="subs">
+    <div class="d-flex p-3 justify-content-end fixed-bottom">
+        <button class="btn btn-primary py-3 rounded-circle" type="button" data-bs-toggle="modal"
+            data-bs-target="#filter-modal" style="width: 64px; height: 64px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+    </div>
 
-    </ul>
+
+    <ul class="list-group list-group-flush" id="subs"></ul>
 
     <div class="modal" tabindex="-1" id="filter-modal">
         <div class="modal-dialog modal-fullscreen">
@@ -53,8 +61,6 @@
                                                 class="form-check-input me-1" type="checkbox" value="garlic sub">Garlic
                                             Sub</label><label class="list-group-item"><input
                                                 class="form-check-input me-1" type="checkbox"
-                                                value="grilled rye">Grilled Rye</label><label
-                                            class="list-group-item"><input class="form-check-input me-1" type="checkbox"
                                                 value="kimmel weck roll">Kimmel Weck Roll</label><label
                                             class="list-group-item"><input class="form-check-input me-1" type="checkbox"
                                                 value="rye">Rye</label><label class="list-group-item"><input
@@ -295,7 +301,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="filter-btn" data-bs-dismiss="modal">Apply</button>
+                    <button type="button" class="btn btn-primary" id="apply-btn" data-bs-dismiss="modal">Apply</button>
                 </div>
             </div>
         </div>

@@ -350,7 +350,7 @@ const subs = [
       "swiss",
       "sauerkraut",
       "russian dressing",
-      "grilled rye"
+      "rye"
     ],
     "price": {
       "half": 6.75,
@@ -366,7 +366,7 @@ const subs = [
       "swiss",
       "coleslaw",
       "russian dressing",
-      "grilled rye"
+      "rye"
     ],
     "price": {
       "half": 6.75,
@@ -382,7 +382,7 @@ const subs = [
       "swiss",
       "sauerkraut",
       "russian dressing",
-      "grilled rye"
+      "rye"
     ],
     "price": {
       "half": 6,
@@ -397,7 +397,7 @@ const subs = [
       "tuna",
       "american",
       "sauteed onions",
-      "grilled rye"
+      "rye"
     ],
     "price": {
       "half": 6,
@@ -414,7 +414,7 @@ const subs = [
       "sauteed onions",
       "lettuce",
       "tomato",
-      "grilled rye"
+      "rye"
     ],
     "price": 10,
     "description": "1/2 lb. Burger, Swiss Cheese, Sauteed Onions, Lettuce, Tomato on grilled Rye"
@@ -1059,8 +1059,7 @@ const categories = [
   {
     "name": "bread",
     "options": [
-      "garlic sub",
-      "grilled rye",
+      "garlic",
       "kimmel weck roll",
       "rye",
       "toasted sub"
@@ -1177,7 +1176,7 @@ const categories = [
   }
 ];
 
-document.getElementById('filter-btn').addEventListener('click', filterSubs);
+document.getElementById('apply-btn').addEventListener('click', filterSubs);
 
 displaySubs(subs);
 
