@@ -1093,88 +1093,88 @@ const categories = [
     ]
   },
   {
-  "name": "cheese",
-  "options": [
-    "american",
-    "cheddar",
-    "mozzarella",
-    "muenster",
-    "pepper jack",
-    "provolone",
-    "smoked gouda",
-    "swiss"
-  ]
-},
-{
-  "name": "vegetables",
-  "options": [
-    "coleslaw",
-    "cucumber",
-    "eggplant",
-    "hot peppers",
-    "jalapenos",
-    "lettuce",
-    "mesculin mix",
-    "mushrooms",
-    "onion",
-    "peppers",
-    "pickles",
-    "portobello mushrooms",
-    "red grapes",
-    "red onion",
-    "roasted red peppers",
-    "roasted vegetables",
-    "sauerkraut",
-    "sauteed hot peppers",
-    "sauteed onions",
-    "sweet chili coleslaw",
-    "spinach",
-    "tomato"
-  ]
-},
-{
-  "name": "condiments",
-  "options": [
-    "au jus",
-    "balsamic dressing",
-    "basil mayo",
-    "bbq sauce",
-    "bleu cheese",
-    "cajun ranch",
-    "cheese sauce",
-    "guacamole",
-    "honey mustard",
-    "honey stinging garlic sauce",
-    "horsey mayo",
-    "hot sauce",
-    "hummus",
-    "italian dressing",
-    "jalapeno mayo",
-    "ketchup",
-    "marinara sauce",
-    "mayo",
-    "medium sauce",
-    "mustard",
-    "oil",
-    "olive spread",
-    "pesto mayo",
-    "roasted red pepper mayo",
-    "russian dressing",
-    "sriracha mayo",
-    "sweet chili sauce"
-  ]
-},
-{
-  "name": "misc",
-  "options": [
-    "cool ranch doritos",
-    "french fries",
-    "mesquite bbq chips",
-    "mozzarella sticks",
-    "nacho cheese doritos",
-    "toasted almonds"
-  ]
-}
+    "name": "cheese",
+    "options": [
+      "american",
+      "cheddar",
+      "mozzarella",
+      "muenster",
+      "pepper jack",
+      "provolone",
+      "smoked gouda",
+      "swiss"
+    ]
+  },
+  {
+    "name": "vegetables",
+    "options": [
+      "coleslaw",
+      "cucumber",
+      "eggplant",
+      "hot peppers",
+      "jalapenos",
+      "lettuce",
+      "mesculin mix",
+      "mushrooms",
+      "onion",
+      "peppers",
+      "pickles",
+      "portobello mushrooms",
+      "red grapes",
+      "red onion",
+      "roasted red peppers",
+      "roasted vegetables",
+      "sauerkraut",
+      "sauteed hot peppers",
+      "sauteed onions",
+      "sweet chili coleslaw",
+      "spinach",
+      "tomato"
+    ]
+  },
+  {
+    "name": "condiments",
+    "options": [
+      "au jus",
+      "balsamic dressing",
+      "basil mayo",
+      "bbq sauce",
+      "bleu cheese",
+      "cajun ranch",
+      "cheese sauce",
+      "guacamole",
+      "honey mustard",
+      "honey stinging garlic sauce",
+      "horsey mayo",
+      "hot sauce",
+      "hummus",
+      "italian dressing",
+      "jalapeno mayo",
+      "ketchup",
+      "marinara sauce",
+      "mayo",
+      "medium sauce",
+      "mustard",
+      "oil",
+      "olive spread",
+      "pesto mayo",
+      "roasted red pepper mayo",
+      "russian dressing",
+      "sriracha mayo",
+      "sweet chili sauce"
+    ]
+  },
+  {
+    "name": "misc",
+    "options": [
+      "cool ranch doritos",
+      "french fries",
+      "mesquite bbq chips",
+      "mozzarella sticks",
+      "nacho cheese doritos",
+      "toasted almonds"
+    ]
+  }
 ];
 
 document.getElementById('filter-btn').addEventListener('click', filterSubs);
@@ -1182,15 +1182,15 @@ document.getElementById('filter-btn').addEventListener('click', filterSubs);
 displaySubs(subs);
 
 function displaySubs(subs) {
-  const currencyFormatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+  const currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
   const displayContainer = document.getElementById('subs');
-  
+
   clearSubs();
 
   subs.forEach(sub => {
     const li = document.createElement('li');
     li.classList.add('list-group-item');
-  
+
     const heading = document.createElement('h5');
     heading.textContent = `#${sub.number} ${sub.name}`;
 
@@ -1222,15 +1222,18 @@ function filterSubs() {
   const withIngredients = Array.from(document.querySelectorAll('#ingredients :checked')).map(node => node.value);
   //console.log(withIngredients);
 
-  const filteredSubs = subs.filter(sub => {
-    for (let i = 0; i < withIngredients.length; i++) {
-      if (sub.ingredients.includes(withIngredients[i])) return true;
-    }
-
-    return false;
-  });
-
-  displaySubs(filteredSubs);
+  if (withIngredients.length > 0) {
+    const filteredSubs = subs.filter(sub => {
+      for (let i = 0; i < withIngredients.length; i++) {
+        if (sub.ingredients.includes(withIngredients[i])) return true;
+      }
+      return false;
+    });
+    
+    displaySubs(filteredSubs);
+  } else {
+    displaySubs(subs);
+  }
 }
 
 /* categories.forEach(category => {
