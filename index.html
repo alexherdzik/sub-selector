@@ -17,18 +17,16 @@
                 data-bs-target="#filter-modal">Filter</button>
         </div>
     </nav>-->
-
-    <div class="d-flex p-3 justify-content-end fixed-bottom">
-        <button class="btn btn-primary py-3 rounded-circle" type="button" data-bs-toggle="modal"
-            data-bs-target="#filter-modal" style="width: 64px; height: 64px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-              </svg>
-            </button>
-    </div>
-
-
     <ul class="list-group list-group-flush" id="subs"></ul>
+
+    <button class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3" type="button" data-bs-toggle="modal"
+        data-bs-target="#filter-modal" style="width: 64px; height: 64px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-filter"
+            viewBox="0 0 16 16">
+            <path
+                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+        </svg>
+    </button>
 
     <div class="modal" tabindex="-1" id="filter-modal">
         <div class="modal-dialog modal-fullscreen">
@@ -39,7 +37,7 @@
                 </div>
                 <div class="modal-body p-0">
                     <div class="d-flex justify-content-center">
-                        <div class="btn-group btn-group-lg flex-fill" role="group" aria-label="Ingredient precision">
+                        <div class="btn-group flex-fill" role="group" aria-label="Ingredient precision">
                             <input type="radio" class="btn-check" name="precision" id="all" autocomplete="off" checked>
                             <label class="btn btn-outline-primary rounded-0" for="all">All</label>
 
