@@ -11,12 +11,6 @@
 </head>
 
 <body>
-    <!--<nav class="navbar fixed-bottom navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                data-bs-target="#filter-modal">Filter</button>
-        </div>
-    </nav>-->
     <ul class="list-group list-group-flush" id="subs"></ul>
 
     <button class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3" type="button" data-bs-toggle="modal"
@@ -38,10 +32,10 @@
                 <div class="modal-body p-0">
                     <div class="d-flex justify-content-center">
                         <div class="btn-group flex-fill" role="group" aria-label="Ingredient precision">
-                            <input type="radio" class="btn-check" name="precision" id="all" autocomplete="off" checked>
+                            <input type="radio" class="btn-check" name="precision" id="all" value="all" autocomplete="off" checked>
                             <label class="btn btn-outline-primary rounded-0" for="all">All</label>
 
-                            <input type="radio" class="btn-check" name="precision" id="any" autocomplete="off">
+                            <input type="radio" class="btn-check" name="precision" id="any" value="any" autocomplete="off">
                             <label class="btn btn-outline-primary rounded-0" for="any">Any<label>
                         </div>
                     </div>

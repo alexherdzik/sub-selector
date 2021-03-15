@@ -1176,7 +1176,9 @@ const categories = [
   }
 ];
 
-document.getElementById('apply-btn').addEventListener('click', filterSubs);
+document.getElementById('apply-btn').addEventListener('click', () => {
+  displaySubs(filterSubs());
+});
 
 displaySubs(subs);
 
@@ -1186,27 +1188,35 @@ function displaySubs(subs) {
 
   clearSubs();
 
-  subs.forEach(sub => {
+  if (!subs.length) {
     const li = document.createElement('li');
-    li.classList.add('list-group-item');
-
-    const heading = document.createElement('h5');
-    heading.textContent = `#${sub.number} ${sub.name}`;
-
-    const description = document.createElement('p');
-    description.classList.add('mb-2');
-    description.textContent = sub.description;
-
-    const price = document.createElement('small');
-    price.classList.add('text-muted');
-    price.textContent = (typeof sub.price === 'object') ? `${currencyFormatter.format(sub.price.half)} / ${currencyFormatter.format(sub.price.whole)}` : currencyFormatter.format(sub.price);
-
-    li.appendChild(heading);
-    li.appendChild(description);
-    li.appendChild(price);
+    li.classList.add('list-group-item', 'list-group-item-danger');
+    li.textContent = "No subs meet the selected criteria";
 
     displayContainer.appendChild(li);
-  });
+  } else {
+    subs.forEach(sub => {
+      const li = document.createElement('li');
+      li.classList.add('list-group-item');
+
+      const heading = document.createElement('h5');
+      heading.textContent = `#${sub.number} ${sub.name}`;
+
+      const description = document.createElement('p');
+      description.classList.add('mb-2');
+      description.textContent = sub.description;
+
+      const price = document.createElement('small');
+      price.classList.add('text-muted');
+      price.textContent = (typeof sub.price === 'object') ? `${currencyFormatter.format(sub.price.half)} | ${currencyFormatter.format(sub.price.whole)}` : currencyFormatter.format(sub.price);
+
+      li.appendChild(heading);
+      li.appendChild(description);
+      li.appendChild(price);
+
+      displayContainer.appendChild(li);
+    });
+  }
 }
 
 function clearSubs() {
@@ -1219,73 +1229,25 @@ function clearSubs() {
 
 function filterSubs() {
   const withIngredients = Array.from(document.querySelectorAll('#ingredients :checked')).map(node => node.value);
-  //console.log(withIngredients);
+  const precision = document.querySelector('input[name="precision"]:checked').value;
 
-  if (withIngredients.length > 0) {
-    const filteredSubs = subs.filter(sub => {
+  if (!withIngredients.length) {
+    return subs;
+  }
+
+  if (precision === 'all') {
+    return subs.filter(sub => {
+      for (let i = 0; i < withIngredients.length; i++) {
+        if (!sub.ingredients.includes(withIngredients[i])) return false;
+      }
+      return true;
+    });
+  } else {
+    return subs.filter(sub => {
       for (let i = 0; i < withIngredients.length; i++) {
         if (sub.ingredients.includes(withIngredients[i])) return true;
       }
       return false;
     });
-    
-    displaySubs(filteredSubs);
-  } else {
-    displaySubs(subs);
   }
 }
-
-/* categories.forEach(category => {
-  const accItem = document.createElement('div');
-  accItem.classList.add('accordion-item');
-
-  const accHeader = document.createElement('h2');
-  accHeader.classList.add('accordion-header');
-  accHeader.setAttribute('id', `heading-${category.name}`);
-
-  const accBtn = document.createElement('button');
-  accBtn.classList.add('accordion-button', 'collapsed');
-  accBtn.setAttribute('type', 'button');
-  accBtn.setAttribute('data-bs-toggle', 'collapse');
-  accBtn.setAttribute('data-bs-target', `#collapse-${category.name}`);
-  accBtn.setAttribute('aria-extended', 'false');
-  accBtn.setAttribute('aria-controls', `collapse-${category.name}`);
-  accBtn.textContent = toTitleCase(category.name);
-
-  const accCol = document.createElement('div');
-  accCol.classList.add('accordion-collapse', 'collapse');
-  accCol.setAttribute('id', `collapse-${category.name}`);
-  accCol.setAttribute('aria-labelledby', `heading-${category.name}`);
-  accCol.setAttribute('data-bs-parent', '#ingredients');
-
-  const accBody = document.createElement('div');
-  accBody.classList.add('accordion-body', 'p-0');
-
-  const listGroup = document.createElement('div');
-  listGroup.classList.add('list-group', 'list-group-flush');
-
-  category.options.forEach(option => {
-
-    const label = document.createElement('label');
-    label.classList.add('list-group-item');
-
-    const input = document.createElement('input');
-    input.classList.add('form-check-input', 'me-1');
-    input.setAttribute('type', 'checkbox');
-    input.setAttribute('value', option);
-
-    const textNode = document.createTextNode(toTitleCase(option));
-
-    label.appendChild(input);
-    label.appendChild(textNode);
-    listGroup.appendChild(label);
-  });
-
-  accBody.appendChild(listGroup);
- accCol.appendChild(accBody);
-
-  accHeader.appendChild(accBtn);
-  accItem.appendChild(accHeader);
-  accItem.appendChild(accCol);
-  document.getElementById('ingredients').appendChild(accItem);
-}); */
