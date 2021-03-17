@@ -1053,128 +1053,7 @@ const subs = [
     },
     "description": "Turkey, Ham, Bacon, Melted Cheddar, Mayo, BBQ, Lettuce, Tomato"
   }
-]
-
-const categories = [
-  {
-    "name": "bread",
-    "options": [
-      "garlic",
-      "kimmel weck roll",
-      "rye",
-      "toasted sub"
-    ]
-  },
-  {
-    "name": "meat",
-    "options": [
-      "bacon",
-      "breaded chicken cutlet",
-      "burger",
-      "capicola",
-      "chicken fingers",
-      "chicken salad",
-      "chopped steak",
-      "corned beef",
-      "fried bologna",
-      "grilled chicken",
-      "ham",
-      "italian sausage patty",
-      "meatballs",
-      "pastrami",
-      "pepperoni",
-      "roast beef",
-      "roasted pork loin",
-      "salami",
-      "sausage patty",
-      "tuna",
-      "turkey"
-    ]
-  },
-  {
-    "name": "cheese",
-    "options": [
-      "american",
-      "cheddar",
-      "mozzarella",
-      "muenster",
-      "pepper jack",
-      "provolone",
-      "smoked gouda",
-      "swiss"
-    ]
-  },
-  {
-    "name": "vegetables",
-    "options": [
-      "coleslaw",
-      "cucumber",
-      "eggplant",
-      "hot peppers",
-      "jalapenos",
-      "lettuce",
-      "mesculin mix",
-      "mushrooms",
-      "onion",
-      "peppers",
-      "pickles",
-      "portobello mushrooms",
-      "red grapes",
-      "red onion",
-      "roasted red peppers",
-      "roasted vegetables",
-      "sauerkraut",
-      "sauteed hot peppers",
-      "sauteed onions",
-      "sweet chili coleslaw",
-      "spinach",
-      "tomato"
-    ]
-  },
-  {
-    "name": "condiments",
-    "options": [
-      "au jus",
-      "balsamic dressing",
-      "basil mayo",
-      "bbq sauce",
-      "bleu cheese",
-      "cajun ranch",
-      "cheese sauce",
-      "guacamole",
-      "honey mustard",
-      "honey stinging garlic sauce",
-      "horsey mayo",
-      "hot sauce",
-      "hummus",
-      "italian dressing",
-      "jalapeno mayo",
-      "ketchup",
-      "marinara sauce",
-      "mayo",
-      "medium sauce",
-      "mustard",
-      "oil",
-      "olive spread",
-      "pesto mayo",
-      "roasted red pepper mayo",
-      "russian dressing",
-      "sriracha mayo",
-      "sweet chili sauce"
-    ]
-  },
-  {
-    "name": "misc",
-    "options": [
-      "cool ranch doritos",
-      "french fries",
-      "mesquite bbq chips",
-      "mozzarella sticks",
-      "nacho cheese doritos",
-      "toasted almonds"
-    ]
-  }
-];
+].map(obj => new Sub(obj));
 
 document.getElementById('apply-btn').addEventListener('click', () => {
   displaySubs(filterSubs());
@@ -1236,18 +1115,29 @@ function filterSubs() {
   }
 
   if (precision === 'all') {
-    return subs.filter(sub => {
-      for (let i = 0; i < withIngredients.length; i++) {
-        if (!sub.ingredients.includes(withIngredients[i])) return false;
-      }
-      return true;
-    });
+    return subs.filter(sub => sub.hasAllIngredients(withIngredients));
   } else {
-    return subs.filter(sub => {
-      for (let i = 0; i < withIngredients.length; i++) {
-        if (sub.ingredients.includes(withIngredients[i])) return true;
-      }
-      return false;
-    });
+    return subs.filter(sub => sub.hasAnyIngredient(withIngredients));
   }
+}
+
+function Sub(obj) {
+  this.number = obj.number,
+  this.name = obj.name,
+  this.description = obj.description,
+  this.price = obj.price,
+  this.ingredients = obj.ingredients
+}
+
+Sub.prototype.hasIngredient = function(ingredient) {
+  return this.ingredients.includes(ingredient);
+}
+
+Sub.prototype.hasAllIngredients = function(ingredients) {
+  console.log(ingredients);
+  return ingredients.every(ingredient => this.hasIngredient(ingredient));
+}
+
+Sub.prototype.hasAnyIngredient = function(ingredients) {
+  return ingredients.some(ingredient => this.hasIngredient(ingredient));
 }
