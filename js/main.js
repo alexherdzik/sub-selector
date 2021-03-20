@@ -1059,6 +1059,14 @@ document.getElementById('apply-btn').addEventListener('click', () => {
   displaySubs(filterSubs());
 });
 
+document.getElementById('clear-btn').addEventListener('click', clearFilterSelections);
+
+/*document.getElementById('filter-modal').addEventListener('hidden.bs.modal', () => {
+  document.querySelectorAll('.modal .accordion .accordion-button').forEach(button => {
+    button.classList.add('collapsed');
+  });
+});*/
+
 displaySubs(subs);
 
 function displaySubs(subs) {

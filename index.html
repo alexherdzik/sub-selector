@@ -15,14 +15,14 @@
 <body style="padding-top: 50px">
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid justify-content-center">
-          <span class="navbar-brand mb-0 h1" style="font-family: 'Great Vibes', cursive;">Sub Selector</span>
+            <span class="navbar-brand mb-0 h1" style="font-family: 'Great Vibes', cursive;">Sub Selector</span>
         </div>
-      </nav>
+    </nav>
 
     <ul class="list-group list-group-flush" id="subs"></ul>
 
-    <button class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3" type="button" data-bs-toggle="modal"
-        data-bs-target="#filter-modal" style="width: 64px; height: 64px;">
+    <button class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-3" type="button"
+        data-bs-toggle="modal" data-bs-target="#filter-modal" style="width: 64px; height: 64px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-filter"
             viewBox="0 0 16 16">
             <path
@@ -40,10 +40,12 @@
                 <div class="modal-body p-0">
                     <div class="d-flex justify-content-center">
                         <div class="btn-group flex-fill" role="group" aria-label="Ingredient precision">
-                            <input type="radio" class="btn-check" name="precision" id="all" value="all" autocomplete="off" checked>
+                            <input type="radio" class="btn-check" name="precision" id="all" value="all"
+                                autocomplete="off" checked>
                             <label class="btn btn-outline-primary rounded-0" for="all">All</label>
 
-                            <input type="radio" class="btn-check" name="precision" id="any" value="any" autocomplete="off">
+                            <input type="radio" class="btn-check" name="precision" id="any" value="any"
+                                autocomplete="off">
                             <label class="btn btn-outline-primary rounded-0" for="any">Any<label>
                         </div>
                     </div>
@@ -52,8 +54,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-bread"><button class="accordion-button collapsed"
                                     type="button" data-bs-toggle="collapse" data-bs-target="#collapse-bread"
-                                    aria-extended="false" aria-controls="collapse-bread"
-                                    aria-expanded="false">Bread</button></h2>
+                                    aria-controls="collapse-bread" aria-expanded="false">Bread</button></h2>
                             <div class="accordion-collapse collapse" id="collapse-bread" aria-labelledby="heading-bread"
                                 data-bs-parent="#ingredients">
                                 <div class="accordion-body p-0">
@@ -72,7 +73,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-meat"><button class="accordion-button collapsed"
                                     type="button" data-bs-toggle="collapse" data-bs-target="#collapse-meat"
-                                    aria-extended="false" aria-controls="collapse-meat">Meat</button></h2>
+                                    aria-controls="collapse-meat">Meat</button></h2>
                             <div class="accordion-collapse collapse" id="collapse-meat" aria-labelledby="heading-meat"
                                 data-bs-parent="#ingredients">
                                 <div class="accordion-body p-0">
@@ -125,8 +126,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-cheese"><button class="accordion-button collapsed"
                                     type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cheese"
-                                    aria-extended="false" aria-controls="collapse-cheese"
-                                    aria-expanded="false">Cheese</button></h2>
+                                    aria-controls="collapse-cheese" aria-expanded="false">Cheese</button></h2>
                             <div class="accordion-collapse collapse" id="collapse-cheese"
                                 aria-labelledby="heading-cheese" data-bs-parent="#ingredients">
                                 <div class="accordion-body p-0">
@@ -153,8 +153,8 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-vegetables"><button
                                     class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse-vegetables" aria-extended="false"
-                                    aria-controls="collapse-vegetables" aria-expanded="false">Vegetables</button></h2>
+                                    data-bs-target="#collapse-vegetables" aria-controls="collapse-vegetables"
+                                    aria-expanded="false">Vegetables</button></h2>
                             <div class="accordion-collapse collapse" id="collapse-vegetables"
                                 aria-labelledby="heading-vegetables" data-bs-parent="#ingredients">
                                 <div class="accordion-body p-0">
@@ -209,8 +209,8 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-condiments"><button
                                     class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse-condiments" aria-extended="false"
-                                    aria-controls="collapse-condiments" aria-expanded="false">Condiments</button></h2>
+                                    data-bs-target="#collapse-condiments" aria-controls="collapse-condiments"
+                                    aria-expanded="false">Condiments</button></h2>
                             <div class="accordion-collapse collapse" id="collapse-condiments"
                                 aria-labelledby="heading-condiments" data-bs-parent="#ingredients">
                                 <div class="accordion-body p-0">
@@ -276,8 +276,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-misc"><button class="accordion-button collapsed"
                                     type="button" data-bs-toggle="collapse" data-bs-target="#collapse-misc"
-                                    aria-extended="false" aria-controls="collapse-misc"
-                                    aria-expanded="false">Misc</button></h2>
+                                    aria-controls="collapse-misc" aria-expanded="false">Misc</button></h2>
                             <div class="accordion-collapse collapse" id="collapse-misc" aria-labelledby="heading-misc"
                                 data-bs-parent="#ingredients">
                                 <div class="accordion-body p-0">
@@ -300,7 +299,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
                     <button type="button" class="btn btn-primary" id="apply-btn" data-bs-dismiss="modal">Apply</button>
                 </div>
             </div>
