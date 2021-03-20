@@ -1121,6 +1121,13 @@ function filterSubs() {
   }
 }
 
+function clearFilterSelections() {
+  const selections = document.querySelectorAll('#ingredients :checked');
+  selections.forEach(selection => {
+    selection.checked = false;
+  });
+}
+
 function Sub(obj) {
   this.number = obj.number,
   this.name = obj.name,
@@ -1134,7 +1141,6 @@ Sub.prototype.hasIngredient = function(ingredient) {
 }
 
 Sub.prototype.hasAllIngredients = function(ingredients) {
-  console.log(ingredients);
   return ingredients.every(ingredient => this.hasIngredient(ingredient));
 }
 
