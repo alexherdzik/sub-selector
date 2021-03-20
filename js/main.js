@@ -1,5 +1,4 @@
-const subs = [
-  {
+const subs = [{
     "number": 1,
     "name": "Manhattan Chicken Salad",
     "ingredients": [
@@ -1055,22 +1054,32 @@ const subs = [
   }
 ].map(obj => new Sub(obj));
 
+const collapseList = Array.from(document.querySelectorAll('.collapse')).map(node => new bootstrap.Collapse(node, {
+  parent: "#ingredients",
+  toggle: false
+}));
+
+
 document.getElementById('apply-btn').addEventListener('click', () => {
   displaySubs(filterSubs());
 });
 
 document.getElementById('clear-btn').addEventListener('click', clearFilterSelections);
 
-/*document.getElementById('filter-modal').addEventListener('hidden.bs.modal', () => {
-  document.querySelectorAll('.modal .accordion .accordion-button').forEach(button => {
-    button.classList.add('collapsed');
+document.getElementById('filter-modal').addEventListener('hidden.bs.modal', () => {
+  collapseList.forEach(collapse => {
+    collapse.hide();
   });
-});*/
+});
 
 displaySubs(subs);
 
+
 function displaySubs(subs) {
-  const currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+  const currencyFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
   const displayContainer = document.getElementById('subs');
 
   clearSubs();
@@ -1138,20 +1147,20 @@ function clearFilterSelections() {
 
 function Sub(obj) {
   this.number = obj.number,
-  this.name = obj.name,
-  this.description = obj.description,
-  this.price = obj.price,
-  this.ingredients = obj.ingredients
+    this.name = obj.name,
+    this.description = obj.description,
+    this.price = obj.price,
+    this.ingredients = obj.ingredients
 }
 
-Sub.prototype.hasIngredient = function(ingredient) {
+Sub.prototype.hasIngredient = function (ingredient) {
   return this.ingredients.includes(ingredient);
 }
 
-Sub.prototype.hasAllIngredients = function(ingredients) {
+Sub.prototype.hasAllIngredients = function (ingredients) {
   return ingredients.every(ingredient => this.hasIngredient(ingredient));
 }
 
-Sub.prototype.hasAnyIngredient = function(ingredients) {
+Sub.prototype.hasAnyIngredient = function (ingredients) {
   return ingredients.some(ingredient => this.hasIngredient(ingredient));
 }
