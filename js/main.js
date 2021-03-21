@@ -1054,11 +1054,16 @@ const subs = [{
   }
 ].map(obj => new Sub(obj));
 
+const alertContainer = document.getElementById('alert-container');
+
+const subContainer = document.getElementById('subs');
+
 const collapseList = Array.from(document.querySelectorAll('.collapse')).map(node => new bootstrap.Collapse(node, {
   parent: "#ingredients",
   toggle: false
 }));
 
+let isFiltered = false;
 
 document.getElementById('apply-btn').addEventListener('click', () => {
   displaySubs(filterSubs());
@@ -1074,52 +1079,65 @@ document.getElementById('filter-modal').addEventListener('hidden.bs.modal', () =
 
 displaySubs(subs);
 
-
+/* Function declarations */
 function displaySubs(subs) {
   const currencyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD'
   });
-  const displayContainer = document.getElementById('subs');
 
+  clearAlert();
   clearSubs();
 
-  if (!subs.length) {
+  if (isFiltered) displayAlert(subs.length);
+
+  subs.forEach(sub => {
     const li = document.createElement('li');
-    li.classList.add('list-group-item', 'list-group-item-danger');
-    li.textContent = "No subs meet the selected criteria";
+    li.classList.add('list-group-item');
 
-    displayContainer.appendChild(li);
-  } else {
-    subs.forEach(sub => {
-      const li = document.createElement('li');
-      li.classList.add('list-group-item');
+    const heading = document.createElement('h5');
+    heading.textContent = `#${sub.number} ${sub.name}`;
 
-      const heading = document.createElement('h5');
-      heading.textContent = `#${sub.number} ${sub.name}`;
+    const description = document.createElement('p');
+    description.classList.add('mb-2');
+    description.textContent = sub.description;
 
-      const description = document.createElement('p');
-      description.classList.add('mb-2');
-      description.textContent = sub.description;
+    const price = document.createElement('small');
+    price.classList.add('text-muted');
+    price.textContent = (typeof sub.price === 'object') ? `${currencyFormatter.format(sub.price.half)} | ${currencyFormatter.format(sub.price.whole)}` : currencyFormatter.format(sub.price);
 
-      const price = document.createElement('small');
-      price.classList.add('text-muted');
-      price.textContent = (typeof sub.price === 'object') ? `${currencyFormatter.format(sub.price.half)} | ${currencyFormatter.format(sub.price.whole)}` : currencyFormatter.format(sub.price);
+    li.appendChild(heading);
+    li.appendChild(description);
+    li.appendChild(price);
 
-      li.appendChild(heading);
-      li.appendChild(description);
-      li.appendChild(price);
-
-      displayContainer.appendChild(li);
-    });
-  }
+    subContainer.appendChild(li);
+  });
 }
 
 function clearSubs() {
-  const displayContainer = document.getElementById('subs');
+  while (subContainer.firstChild) {
+    subContainer.removeChild(subContainer.lastChild);
+  }
+}
 
-  while (displayContainer.firstChild) {
-    displayContainer.removeChild(displayContainer.lastChild);
+function displayAlert(numOfResults) {
+  const alert = document.createElement('div');
+  alert.classList.add('alert', 'rounded-0', 'm-0');
+
+  if (!numOfResults) {
+    alert.classList.add('alert-danger');
+    alert.textContent = "No subs meet the selected criteria.";
+  } else {
+    alert.classList.add('alert-primary');
+    alert.textContent = `${numOfResults} result(s) returned.`;
+  }
+
+  alertContainer.appendChild(alert);
+}
+
+function clearAlert() {
+  while (alertContainer.firstChild) {
+    alertContainer.removeChild(alertContainer.lastChild);
   }
 }
 
@@ -1128,7 +1146,10 @@ function filterSubs() {
   const precision = document.querySelector('input[name="precision"]:checked').value;
 
   if (!withIngredients.length) {
+    isFiltered = false;
     return subs;
+  } else {
+    isFiltered = true;
   }
 
   if (precision === 'all') {
